@@ -1,0 +1,47 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF4500"/>
+      <stop offset="50%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#87CEEB"/>
+    </linearGradient>
+    <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#FF4500"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- 天空背景 -->
+  <rect width="400" height="300" fill="url(#skyGradient)"/>
+  
+  <!-- 远山 -->
+  <path d="M0,200 L100,150 L200,180 L300,130 L400,170 L400,300 L0,300 Z" 
+        fill="#4B0082" opacity="0.6"/>
+  
+  <!-- 近山 -->
+  <path d="M0,250 L150,200 L250,230 L400,180 L400,300 L0,300 Z" 
+        fill="#2F4F4F"/>
+  
+  <!-- 太阳 -->
+  <circle cx="200" cy="100" r="40" fill="url(#sunGradient)"/>
+  
+  <!-- 光芒 -->
+  <g opacity="0.6">
+    <line x1="200" y1="40" x2="200" y2="10" stroke="#FFD700" stroke-width="2"/>
+    <line x1="260" y1="100" x2="290" y2="100" stroke="#FFD700" stroke-width="2"/>
+    <line x1="140" y1="100" x2="110" y2="100" stroke="#FFD700" stroke-width="2"/>
+    <line x1="242" y1="58" x2="265" y2="35" stroke="#FFD700" stroke-width="2"/>
+    <line x1="158" y1="58" x2="135" y2="35" stroke="#FFD700" stroke-width="2"/>
+  </g>
+  
+  <!-- 云朵 -->
+  <g opacity="0.8" fill="#FFA07A">
+    <circle cx="50" cy="80" r="20"/>
+    <circle cx="80" cy="80" r="25"/>
+    <circle cx="110" cy="80" r="20"/>
+    
+    <circle cx="300" cy="60" r="15"/>
+    <circle cx="330" cy="60" r="20"/>
+    <circle cx="360" cy="60" r="15"/>
+  </g>
+</svg>

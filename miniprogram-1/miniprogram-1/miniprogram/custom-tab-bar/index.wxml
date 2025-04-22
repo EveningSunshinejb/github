@@ -1,0 +1,11 @@
+<view class="tab-bar">
+  <view class="tab-bar-border"></view>
+  <view wx:for="{{list}}" wx:key="index" class="tab-bar-item {{item.isSpecial ? 'special' : ''}}" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+    <view class="icon-wrapper {{item.isSpecial ? 'special' : ''}}">
+      <image class="icon {{item.isSpecial ? 'special' : ''}}" src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></image>
+    </view>
+    <view class="text-wrapper">
+      <view class="tab-bar-text" style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</view>
+    </view>
+  </view>
+</view>

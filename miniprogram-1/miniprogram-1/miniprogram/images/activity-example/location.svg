@@ -1,0 +1,34 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="parkGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#90EE90"/>
+      <stop offset="100%" style="stop-color:#228B22"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="800" height="400" fill="#F5F5F5"/>
+  
+  <!-- 景区轮廓 -->
+  <path d="M100,100 Q400,50 700,100 Q750,200 700,300 Q400,350 100,300 Q50,200 100,100 Z" 
+        fill="url(#parkGradient)" stroke="#2E8B57" stroke-width="2"/>
+  
+  <!-- 主要景点标记 -->
+  <circle cx="250" cy="200" r="10" fill="red"/>
+  <text x="270" y="205" font-size="14">观景台</text>
+  
+  <circle cx="400" cy="150" r="10" fill="red"/>
+  <text x="420" y="155" font-size="14">山顶</text>
+  
+  <circle cx="550" cy="200" r="10" fill="red"/>
+  <text x="570" y="205" font-size="14">休息站</text>
+  
+  <!-- 路线 -->
+  <path d="M200,300 Q300,250 400,150 Q500,200 600,250" 
+        fill="none" stroke="#8B4513" stroke-width="3" stroke-dasharray="5,5"/>
+  
+  <!-- 指北针 -->
+  <circle cx="700" cy="80" r="30" fill="white" stroke="#333" stroke-width="2"/>
+  <path d="M700,50 L700,110 M670,80 L730,80" stroke="#333" stroke-width="2"/>
+  <text x="695" y="70" font-size="16">N</text>
+</svg>

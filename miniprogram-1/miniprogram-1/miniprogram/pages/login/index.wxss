@@ -1,0 +1,48 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60rpx 32rpx;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.logo-container {
+  margin: 80rpx 0;
+}
+
+.logo {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 90rpx;
+}
+
+.welcome-text {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 16rpx;
+}
+
+.sub-text {
+  font-size: 28rpx;
+  color: #666666;
+  margin-bottom: 80rpx;
+}
+
+.login-btn {
+  width: 100% !important;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wechat-icon {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 12rpx;
+}

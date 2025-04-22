@@ -1,0 +1,185 @@
+.container {
+  padding-bottom: 120rpx;
+}
+
+.cover-image {
+  width: 100%;
+  height: 400rpx;
+  object-fit: cover;
+}
+
+.info-section {
+  padding: 30rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  color: #333;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.qrcode-icon {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  right: 0;
+  opacity: 0.8;
+  padding: 10rpx;
+}
+
+.icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
+}
+
+.info-item text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.detail-section,
+.signup-section {
+  padding: 30rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  color: #333;
+}
+
+.content {
+  padding: 15px;
+  color: #666;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.content {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.content-image {
+  width: 100%;
+  border-radius: 8rpx;
+  margin: 20rpx 0;
+}
+
+.signup-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.signup-info text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.button-section {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 30rpx;
+  background: #fff;
+  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.button-group {
+  display: flex;
+  gap: 20rpx;
+}
+
+.view-list-button {
+  flex: 1;
+  background: #4A90E2;
+  color: #fff;
+  border: none;
+}
+
+.signup-button {
+  flex: 1;
+  background: #FF8C00;
+  color: #fff;
+  border: none;
+}
+
+.cancel-button {
+  flex: 1;
+  background: #f5f5f5;
+  color: #666;
+  border: none;
+}
+
+.manage-button {
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+}
+
+button {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  border-radius: 40rpx;
+}
+
+/* 群聊二维码模态框样式 */
+.qrcode-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.qrcode-container {
+  background: #fff;
+  padding: 40rpx;
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.qrcode-image {
+  width: 400rpx;
+  height: 400rpx;
+  background: #f5f5f5;
+}
+
+.qrcode-tip {
+  font-size: 28rpx;
+  color: #666;
+}

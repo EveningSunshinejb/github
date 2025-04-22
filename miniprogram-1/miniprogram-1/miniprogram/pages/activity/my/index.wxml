@@ -1,0 +1,76 @@
+<!--pages/activity/my/index.wxml-->
+<view class="container">
+  <calendar 
+    active-date="{{selectedDate}}" 
+    active-dates="{{activeDates}}" 
+    bind:dateSelect="onDateSelect">
+  </calendar>
+
+  <view class="tab-container">
+    <view class="tab {{activeTab === 'organized' ? 'active' : ''}}" bindtap="switchTab" data-tab="organized">我组织的</view>
+    <view class="tab {{activeTab === 'joined' ? 'active' : ''}}" bindtap="switchTab" data-tab="joined">我参加的</view>
+  </view>
+
+  <view class="activities-container">
+    <block wx:if="{{activeTab === 'organized'}}">
+      <view class="section" wx:if="{{organizedActivities.length > 0}}">
+        <view class="activity-list">
+          <view class="activity-card" wx:for="{{organizedActivities}}" wx:key="id" bindtap="viewActivityDetail" data-id="{{item.id}}">
+            <view class="activity-header">
+              <text class="activity-title">{{item.title}}</text>
+              <text class="activity-status {{item.status === '进行中' ? 'status-ongoing' : 'status-ended'}}">{{item.status}}</text>
+            </view>
+            <view class="activity-info">
+              <view class="info-item">
+                <image class="icon" src="/images/calendar.svg" mode="aspectFit"></image>
+                <text>{{item.date}}</text>
+              </view>
+              <view class="info-item">
+                <image class="icon" src="/images/location.svg" mode="aspectFit"></image>
+                <text>{{item.location}}</text>
+              </view>
+              <view class="info-item">
+                <image class="icon" src="/images/user.svg" mode="aspectFit"></image>
+                <text>{{item.participants}}人参与</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <block wx:if="{{activeTab === 'joined'}}">
+      <view class="section" wx:if="{{joinedActivities.length > 0}}">
+        <view class="activity-list">
+          <view class="activity-card" wx:for="{{joinedActivities}}" wx:key="id" bindtap="viewActivityDetail" data-id="{{item.id}}">
+            <view class="activity-header">
+              <text class="activity-title">{{item.title}}</text>
+              <text class="activity-status {{item.status === '进行中' ? 'status-ongoing' : 'status-ended'}}">{{item.status}}</text>
+            </view>
+            <view class="activity-info">
+              <view class="info-item">
+                <image class="icon" src="/images/calendar.svg" mode="aspectFit"></image>
+                <text>{{item.date}}</text>
+              </view>
+              <view class="info-item">
+                <image class="icon" src="/images/location.svg" mode="aspectFit"></image>
+                <text>{{item.location}}</text>
+              </view>
+              <view class="info-item">
+                <image class="icon" src="/images/user.svg" mode="aspectFit"></image>
+                <text>{{item.participants}}人参与</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <view wx:if="{{(activeTab === 'organized' && organizedActivities.length === 0) || (activeTab === 'joined' && joinedActivities.length === 0)}}" class="empty-state">
+      <image class="empty-icon" src="/images/empty.svg" mode="aspectFit"></image>
+      <text class="empty-text">暂无活动</text>
+    </view>
+
+    <view class="loading" wx:if="{{loading}}">加载中...</view>
+  </view>
+</view>

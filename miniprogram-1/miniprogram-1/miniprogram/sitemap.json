@@ -1,0 +1,17 @@
+{
+  "desc": "配置小程序及其页面是否允许被微信索引",
+  "rules": [{
+    "action": "allow",
+    "page": "pages/index/index",
+    "params": ["*"],
+    "matching": "inclusive"
+  }, {
+    "action": "allow",
+    "page": "pages/activity/detail/index",
+    "params": ["id"],
+    "matching": "inclusive"
+  }, {
+    "action": "disallow",
+    "page": "pages/profile/*"
+  }]
+}

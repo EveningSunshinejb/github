@@ -1,0 +1,175 @@
+<!-- pages/activity/publish/index.wxml -->
+<view class="container">
+  <form bindsubmit="onSubmit">
+    <view class="form-group">
+      <view class="form-label required">活动标题</view>
+      <input 
+        class="form-input {{formData.titleError ? 'error' : ''}}" 
+        type="text" 
+        placeholder="请输入活动标题（0-30字，不含特殊符号）"
+        data-field="title"
+        bindinput="onInput"
+        value="{{formData.title}}"
+      />
+      <view class="error-text" wx:if="{{formData.titleError}}">{{formData.titleError}}</view>
+    </view>
+
+    <view class="form-group">
+      <view class="form-label required">活动类型</view>
+      <view class="type-picker-group">
+        <picker 
+          bindchange="onTypeChange" 
+          value="{{formData.typeIndex}}" 
+          range="{{activityTypes}}" 
+          range-key="name"
+        >
+          <view class="picker-view {{!formData.type ? 'placeholder' : ''}}">
+            {{formData.activityType || '请选择活动大类'}}
+          </view>
+        </picker>
+        <picker 
+          bindchange="onSubTypeChange" 
+          value="{{formData.subTypeIndex}}" 
+          range="{{activityTypes[formData.typeIndex].subTypes}}"
+          disabled="{{!formData.activityType}}"
+        >
+          <view class="picker-view {{!formData.activitySubType ? 'placeholder' : ''}}">
+            {{formData.activitySubType || '请选择活动小类'}}
+          </view>
+        </picker>
+      </view>
+      <view class="error-text" wx:if="{{formData.typeError}}">{{formData.typeError}}</view>
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">活动封面</view>
+      <view class="cover-uploader" bindtap="chooseCover">
+        <image wx:if="{{formData.cover}}" src="{{formData.cover}}" mode="aspectFill" class="cover-image"/>
+        <view wx:else class="upload-placeholder">
+          <image src="/images/add.png" class="upload-icon"/>
+          <text>上传封面图片（3:4）</text>
+        </view>
+      </view>
+      <view class="error-text" wx:if="{{formData.coverError}}">{{formData.coverError}}</view>
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">活动简介</view>
+      <editor
+        id="editor"
+        class="rich-editor"
+        placeholder="请输入活动简介"
+        bindready="onEditorReady"
+        bindinput="onEditorInput"
+      />
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">开始时间</view>
+      <picker 
+        mode="multiSelector" 
+        bindchange="onStartTimeChange" 
+        bindcolumnchange="onStartTimeColumnChange"
+        value="{{startTimeIndex}}"
+        range="{{startTimeArray}}"
+      >
+        <view class="picker-view">
+          {{formData.startTime || '请选择开始时间'}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">结束时间</view>
+      <picker 
+        mode="multiSelector" 
+        bindchange="onEndTimeChange" 
+        bindcolumnchange="onEndTimeColumnChange"
+        value="{{endTimeIndex}}"
+        range="{{endTimeArray}}"
+      >
+        <view class="picker-view">
+          {{formData.endTime || '请选择结束时间'}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">报名截止时间</view>
+      <picker 
+        mode="multiSelector" 
+        bindchange="onDeadlineChange" 
+        bindcolumnchange="onDeadlineColumnChange"
+        value="{{deadlineIndex}}"
+        range="{{deadlineArray}}"
+      >
+        <view class="picker-view">
+          {{formData.registrationDeadline || '请选择报名截止时间'}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-group">
+      <view class="form-label required">活动形式</view>
+      <radio-group class="radio-group" bindchange="onLocationTypeChange">
+        <label class="radio-label">
+          <radio value="offline" checked="{{formData.locationType === 'offline'}}"/>线下活动
+        </label>
+        <label class="radio-label">
+          <radio value="online" checked="{{formData.locationType === 'online'}}"/>线上活动
+        </label>
+      </radio-group>
+
+      <block wx:if="{{formData.locationType === 'offline'}}">
+        <view class="location-picker" bindtap="chooseLocation">
+          <view class="{{!formData.location ? 'placeholder' : ''}}">{{formData.location || '点击选择活动地点'}}</view>
+          <image class="location-icon" src="/images/location.svg" mode="aspectFit"></image>
+        </view>
+      </block>
+      <block wx:if="{{formData.locationType === 'online'}}">
+        <input 
+          class="form-input" 
+          type="text" 
+          placeholder="请输入会议链接"
+          data-field="location"
+          bindinput="onInput"
+          value="{{formData.location}}"
+        />
+      </block>
+      <view class="error-text" wx:if="{{formData.locationError}}">{{formData.locationError}}</view>
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">参与人数上限</view>
+      <input 
+        class="form-input" 
+        type="number" 
+        placeholder="不填默认无限制"
+        data-field="maxParticipants"
+        bindinput="onInput"
+        value="{{formData.maxParticipants}}"
+      />
+    </view>
+
+    <view class="form-group">
+      <view class="form-label required">群聊二维码</view>
+      <view class="qrcode-uploader" bindtap="chooseQRCode">
+        <image 
+          wx:if="{{formData.qrcode}}" 
+          class="qrcode-image" 
+          src="{{formData.qrcode}}" 
+          mode="aspectFit"
+        />
+        <view wx:else class="upload-placeholder">
+          <image class="upload-icon" src="/images/add.png" mode="aspectFit"></image>
+          <view>上传群聊二维码</view>
+        </view>
+      </view>
+      <view class="error-text" wx:if="{{formData.qrcodeError}}">{{formData.qrcodeError}}</view>
+    </view>
+
+    <view class="button-group">
+      <button class="btn btn-primary" form-type="submit">发布活动</button>
+    </view>
+  </form>
+</view>

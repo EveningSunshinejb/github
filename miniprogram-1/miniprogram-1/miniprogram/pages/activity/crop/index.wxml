@@ -1,0 +1,36 @@
+<!-- pages/activity/crop/index.wxml -->
+<view class="container">
+  <view class="cropper-container" style="height: {{cropperHeight}}px;">
+    <movable-area style="width: 100%; height: 100%;">
+      <movable-view
+        direction="all"
+        scale="true"
+        scale-min="1"
+        scale-max="3"
+        scale-value="{{scale}}"
+        x="{{x}}"
+        y="{{y}}"
+        bindchange="onTouchMove"
+        bindscale="onScale"
+        style="width: {{width}}px; height: {{height}}px;"
+      >
+        <image src="{{imagePath}}" style="width: 100%; height: 100%;" />
+      </movable-view>
+    </movable-area>
+    <view class="crop-frame" style="width: {{cropperWidth}}px; height: {{cropperHeight}}px;">
+      <view class="crop-line horizontal-top"></view>
+      <view class="crop-line horizontal-bottom"></view>
+      <view class="crop-line vertical-left"></view>
+      <view class="crop-line vertical-right"></view>
+      <view class="crop-corner top-left"></view>
+      <view class="crop-corner top-right"></view>
+      <view class="crop-corner bottom-left"></view>
+      <view class="crop-corner bottom-right"></view>
+    </view>
+  </view>
+
+  <view class="button-group">
+    <button class="btn cancel" bindtap="cancelCrop">取消</button>
+    <button class="btn confirm" type="primary" bindtap="confirmCrop">确定</button>
+  </view>
+</view>

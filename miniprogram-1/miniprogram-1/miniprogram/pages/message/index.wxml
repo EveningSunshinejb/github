@@ -1,0 +1,6 @@
+<!--pages/message/index.wxml-->
+<view class="container">
+  <view class="empty-placeholder">
+    <text>暂无消息</text>
+  </view>
+</view>

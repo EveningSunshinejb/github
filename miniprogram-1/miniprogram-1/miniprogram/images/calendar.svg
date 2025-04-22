@@ -1,0 +1,8 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="none"/>
+  <path d="M150 30h-20V20c0-2.761-2.239-5-5-5s-5 2.239-5 5v10H80V20c0-2.761-2.239-5-5-5s-5 2.239-5 5v10H50c-5.523 0-10 4.477-10 10v120c0 5.523 4.477 10 10 10h100c5.523 0 10-4.477 10-10V40c0-5.523-4.477-10-10-10zm0 130H50V70h100v90zM50 60V40h20v10c0 2.761 2.239 5 5 5s5-2.239 5-5V40h40v10c0 2.761 2.239 5 5 5s5-2.239 5-5V40h20v20H50z" fill="#333"/>
+  <rect x="70" y="90" width="20" height="20" rx="2" fill="#333"/>
+  <rect x="110" y="90" width="20" height="20" rx="2" fill="#333"/>
+  <rect x="70" y="120" width="20" height="20" rx="2" fill="#333"/>
+  <rect x="110" y="120" width="20" height="20" rx="2" fill="#333"/>
+</svg>

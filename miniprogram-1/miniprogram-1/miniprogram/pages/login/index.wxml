@@ -1,0 +1,12 @@
+<!-- pages/login/index.wxml -->
+<view class="login-container">
+  <view class="logo-container">
+    <image class="logo" src="{{hasUserInfo ? userInfo.avatarUrl : '/images/default-avatar.png'}}" mode="aspectFit"></image>
+  </view>
+  <view class="welcome-text">{{hasUserInfo ? '欢迎回来，' + userInfo.nickName : '欢迎来到校友会！'}}</view>
+  <view class="sub-text">{{hasUserInfo ? '点击下方按钮进入首页' : '登录后即可浏览和参与精彩活动'}}</view>
+  <button class="login-btn" type="primary" bindtap="handleGetUserInfo">
+    <image class="wechat-icon" src="/images/wechat.svg" mode="aspectFit"></image>
+    {{hasUserInfo ? '进入首页' : '微信一键登录'}}
+  </button>
+</view>

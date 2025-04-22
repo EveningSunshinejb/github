@@ -1,0 +1,139 @@
+.city-page {
+  height: 100vh;
+  background: #f8f8f8;
+  position: relative;
+}
+
+/* 搜索栏样式 */
+.search-bar {
+  padding: 10px 15px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.search-input {
+  flex: 1;
+  height: 36px;
+  background: #f5f5f5;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.search-input input {
+  flex: 1;
+  height: 36px;
+  font-size: 14px;
+}
+
+.close-btn {
+  padding-left: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* 城市列表样式 */
+.city-list {
+  height: calc(100vh - 56px);
+  padding: 56px 15px 0;
+  box-sizing: border-box;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.city-item {
+  height: 44px;
+  background: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.city-item.location {
+  display: flex;
+  align-items: center;
+}
+
+.location-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.city-list-item {
+  height: 44px;
+  line-height: 44px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 0 15px;
+  margin-bottom: 1px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* 字母导航样式 */
+.letter-nav {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 6px 3px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  z-index: 100;
+}
+
+.letter-item {
+  padding: 2px 3px;
+  font-size: 11px;
+  color: #fff;
+  text-align: center;
+}
+
+/* 字母提示样式 */
+.letter-hint {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #fff;
+  z-index: 200;
+}

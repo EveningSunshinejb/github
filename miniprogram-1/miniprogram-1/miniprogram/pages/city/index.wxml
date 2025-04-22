@@ -1,0 +1,76 @@
+<!-- pages/city/index.wxml -->
+<view class="city-page">
+  <!-- 顶部搜索栏 -->
+  <view class="search-bar">
+    <view class="search-input">
+      <image src="/images/search.svg" class="search-icon" />
+      <input type="text" placeholder="搜索城市/区县" bindinput="onSearch" value="{{searchValue}}" />
+    </view>
+    <view class="close-btn" bindtap="onCitySelect" data-city="全国">取消</view>
+  </view>
+
+
+
+  <!-- 城市列表 -->
+  <scroll-view 
+    scroll-y 
+    class="city-list"
+    scroll-into-view="{{scrollIntoView}}"
+    scroll-with-animation
+  >
+    <!-- 定位城市 -->
+    <view class="section" id="section-定位">
+      <view class="section-title">定位城市</view>
+      <view class="city-grid">
+        <view class="city-item location" bindtap="getCurrentLocation">
+          <image src="/images/location.svg" class="location-icon" />
+          <text>重新定位</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 热门城市 -->
+    <view class="section">
+      <view class="section-title">热门城市</view>
+      <view class="city-grid">
+        <view 
+          class="city-item"
+          wx:for="{{hotCities}}"
+          wx:key="*this"
+          bindtap="onCitySelect"
+          data-city="{{item}}"
+        >{{item}}</view>
+      </view>
+    </view>
+
+    <!-- 按字母排序的城市列表 -->
+    <block wx:for="{{citiesList}}" wx:key="index">
+      <view class="section" id="section-{{index}}">
+        <view class="section-title">{{index}}</view>
+        <view class="city-list-item"
+          wx:for="{{item}}"
+          wx:key="*this"
+          wx:for-item="city"
+          bindtap="onCitySelect"
+          data-city="{{city}}"
+        >{{city}}</view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <!-- 右侧字母导航 -->
+  <view class="letter-nav">
+    <view 
+      class="letter-item"
+      wx:for="{{letters}}"
+      wx:key="*this"
+      bindtap="onLetterTap"
+      data-letter="{{item}}"
+    >{{item}}</view>
+  </view>
+
+  <!-- 字母提示 -->
+  <view class="letter-hint" wx:if="{{showLetterHint}}">
+    {{currentLetter}}
+  </view>
+</view>

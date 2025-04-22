@@ -1,0 +1,9 @@
+// 基础过滤器模块
+var formatTime = function(timestamp) {
+  var date = getDate(timestamp);
+  return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+}
+
+module.exports = {
+  formatTime: formatTime
+}

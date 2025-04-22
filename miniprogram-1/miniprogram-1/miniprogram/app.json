@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/activity/detail/index",
+    "pages/activity/publish/index",
+    "pages/activity/my/index",
+    "pages/activity/joined/index",
+    "pages/message/index",
+    "pages/profile/index",
+    "pages/userinfo/index",
+    "pages/login/index",
+    "pages/city/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "校友会活动平台",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于查看附近的活动"
+    }
+  },
+  "plugins": {
+    "chooseLocation": {
+      "version": "1.0.10",
+      "provider": "wx76a9a06e5b4e693e"
+    }
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#FF8C00",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "活动广场",
+        "iconPath": "images/square_default.png",
+        "selectedIconPath": "images/square.png"
+      },
+      {
+        "pagePath": "pages/activity/my/index",
+        "text": "活动管理",
+        "iconPath": "images/manage_default.png",
+        "selectedIconPath": "images/manage.png"
+      },
+      {
+        "pagePath": "pages/activity/publish/index",
+        "text": "",
+        "iconPath": "images/add.png",
+        "selectedIconPath": "images/add.png"
+      },
+      {
+        "pagePath": "pages/message/index",
+        "text": "消息",
+        "iconPath": "images/message_default.png",
+        "selectedIconPath": "images/message.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "images/my_default.png",
+        "selectedIconPath": "images/my.png"
+      }
+    ]
+  }
+}

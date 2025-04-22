@@ -1,0 +1,33 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB"/>
+      <stop offset="100%" style="stop-color:#E0F6FF"/>
+    </linearGradient>
+    <linearGradient id="mountainGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B4513"/>
+      <stop offset="100%" style="stop-color:#654321"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 天空背景 -->
+  <rect width="800" height="400" fill="url(#skyGradient)"/>
+  
+  <!-- 远山 -->
+  <path d="M0,400 L300,150 L500,250 L800,100 L800,400 Z" fill="#A0522D" opacity="0.6"/>
+  
+  <!-- 近山 -->
+  <path d="M0,400 L200,200 L400,300 L600,150 L800,250 L800,400 Z" fill="url(#mountainGradient)"/>
+  
+  <!-- 云朵 -->
+  <circle cx="100" cy="100" r="30" fill="white" opacity="0.8"/>
+  <circle cx="130" cy="100" r="25" fill="white" opacity="0.8"/>
+  <circle cx="160" cy="100" r="20" fill="white" opacity="0.8"/>
+  
+  <circle cx="600" cy="80" r="25" fill="white" opacity="0.8"/>
+  <circle cx="630" cy="80" r="20" fill="white" opacity="0.8"/>
+  <circle cx="660" cy="80" r="15" fill="white" opacity="0.8"/>
+  
+  <!-- 太阳 -->
+  <circle cx="700" cy="100" r="40" fill="#FFD700"/>
+</svg>

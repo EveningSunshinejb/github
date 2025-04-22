@@ -1,0 +1,34 @@
+<!--pages/activity/signup-list/index.wxml-->
+<view class="container">
+  <view class="list-header">
+    <text class="title">报名名单</text>
+    <text class="count">{{signUpList.length}}人已报名</text>
+  </view>
+  
+  <scroll-view 
+    class="signup-list" 
+    scroll-y 
+    bindscrolltolower="onLoadMore"
+    refresher-enabled="{{true}}"
+    bindrefresherrefresh="onRefresh"
+    refresher-triggered="{{refreshing}}">
+    <view class="list-content">
+      <view class="signup-item" wx:for="{{signUpList}}" wx:key="_id">
+        <image class="avatar" src="{{item.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"></image>
+        <view class="user-info">
+          <text class="nickname">{{item.nickName || '微信用户'}}</text>
+          <text class="signup-time">{{item.signUpTime}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="loading" wx:if="{{loading}}">
+      <text>加载中...</text>
+    </view>
+    
+    <view class="empty-state" wx:if="{{signUpList.length === 0 && !loading}}">
+      <image class="empty-icon" src="/images/empty.svg"></image>
+      <text class="empty-text">暂无报名</text>
+    </view>
+  </scroll-view>
+</view>

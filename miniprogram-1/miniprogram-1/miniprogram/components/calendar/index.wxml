@@ -1,0 +1,20 @@
+<view class="calendar">
+  <view class="header">
+    <view class="previous" bindtap="prevMonth">←</view>
+    <view class="current">{{currentYear}}年{{currentMonth}}月</view>
+    <view class="next" bindtap="nextMonth">→</view>
+  </view>
+  <view class="weekdays">
+    <view wx:for="{{weekDays}}" wx:key="*this">{{item}}</view>
+  </view>
+  <view class="days">
+    <view wx:for="{{days}}" wx:key="index" 
+          class="day {{item.isCurrentMonth ? 'current-month' : 'other-month'}} {{item.isActive ? 'active' : ''}} {{item.isToday ? 'today' : ''}} {{item.hasActivity ? 'has-activity' : ''}}"
+          data-day="{{item.day}}" 
+          data-is-current-month="{{item.isCurrentMonth}}"
+          bindtap="selectDate">
+      <view class="day-number">{{item.day}}</view>
+      <view class="activity-dot" wx:if="{{item.hasActivity}}"></view>
+    </view>
+  </view>
+</view>

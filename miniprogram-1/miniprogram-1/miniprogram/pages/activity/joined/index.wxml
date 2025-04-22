@@ -1,0 +1,34 @@
+<!--pages/activity/joined/index.wxml-->
+<view class="container">
+  <block wx:if="{{activities.length > 0}}">
+    <view class="activity-list">
+      <view class="activity-card" wx:for="{{activities}}" wx:key="id" bindtap="viewActivityDetail" data-id="{{item.id}}">
+        <view class="activity-header">
+          <text class="activity-title">{{item.title}}</text>
+          <text class="activity-status {{item.status === '报名成功' ? 'status-success' : 'status-pending'}}">{{item.status}}</text>
+        </view>
+        <view class="activity-info">
+          <view class="info-item">
+            <image class="icon" src="/images/calendar.svg" mode="aspectFit"></image>
+            <text>{{item.date}}</text>
+          </view>
+          <view class="info-item">
+            <image class="icon" src="/images/location.svg" mode="aspectFit"></image>
+            <text>{{item.location}}</text>
+          </view>
+          <view class="info-item">
+            <image class="icon" src="/images/user.svg" mode="aspectFit"></image>
+            <text>发起人：{{item.organizer}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="loading" wx:if="{{loading}}">加载中...</view>
+    <view class="no-more" wx:if="{{!hasMore && !loading}}">没有更多活动了</view>
+  </block>
+  
+  <view class="empty-state" wx:else>
+    <image class="empty-icon" src="/images/empty.svg" mode="aspectFit"></image>
+    <text class="empty-text">暂无报名活动</text>
+  </view>
+</view>
